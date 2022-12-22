@@ -6,7 +6,7 @@ Note: This tool is currently under heavy development, if you have any other feat
 
 # Installing Clickjacker
 
-Make sure you have Python3 and Git installed to run the program:
+Make sure you have **Python3** and **Git** installed to run the program:
 
 Clone this Repository:
 
