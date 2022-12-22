@@ -6,8 +6,12 @@ Note: This tool is currently under heavy development, if you have any other feat
 
 Install Pre-requisites: 
 
+```sh
 pip3 install -r requirements.txt
+```
 
 Running the Script:
 
+```sh
 python3 clickjacker.py
+```
