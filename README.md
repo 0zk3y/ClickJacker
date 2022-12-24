@@ -23,5 +23,5 @@ pip3 install -r requirements.txt
 Running the Script:
 
 ```sh
-python3 clickjacker.py
+python3 ClickJacker.py
 ```
