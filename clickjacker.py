@@ -10,7 +10,7 @@ contents = contents.split("\n")[0:-1]
 for i in contents:
     print(i)
     i.rstrip()
-    if not (i.startswith("http://") or i.startswith("https://")):    
+    if not (i.startswith("http://") or i.startswith("https://")):
         response = requests.get(f"https://{i}", verify=False)
         if "X-Frame-Options" in response.headers:
             print("X-Frame-Options header is set")
