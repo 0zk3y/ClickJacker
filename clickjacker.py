@@ -22,3 +22,6 @@ for i in contents:
             print("X-Frame-Options header is set")
         else:
             print("X-Frame-Options header is not set and Website might be vulnerable")
+print("====================================================================================================================")
+print("In case of Any issues please create an issue over Github or contact me on Twitter @0zk3y")
+print("====================================================================================================================")
