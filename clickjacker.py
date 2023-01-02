@@ -11,7 +11,7 @@ for i in contents:
     print(i)
     i.rstrip()
     if not (i.startswith("http://") or i.startswith("https://")):
-        response = requests.get(f"https://{i}", verify=False)
+        response = requests.get(f"http://{i}", verify=False)
         if "X-Frame-Options" in response.headers:
             print("X-Frame-Options header is set")
         else:
