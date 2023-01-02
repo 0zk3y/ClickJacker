@@ -15,7 +15,7 @@ for i in contents:
         if "X-Frame-Options" in response.headers:
             print("X-Frame-Options header is set")
         else:
-            print("X-Frame-Options header is not set and Website might be vulnerable")
+            print("X-Frame-Options header is not set and Website might be Vulnerable")
     else:
         response = requests.get(i, verify=False)
         if "X-Frame-Options" in response.headers:
