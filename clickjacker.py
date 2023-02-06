@@ -33,7 +33,7 @@ try:
         else:
             print("X-Frame-Options header is not set and Website might be vulnerable")
     except requests.exceptions.RequestException as e:
-        pass
+        continue
     except requests.exceptions.NewConnectionError as e:
         print(f"Error connecting to {i}: {e}")
 except ValueError as e:
