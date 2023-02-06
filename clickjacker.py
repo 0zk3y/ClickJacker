@@ -11,18 +11,22 @@ contents = contents.split("\n")[0:-1]
 for i in contents:
     print(i)
     i.rstrip()
-    if not (i.startswith("http://") or i.startswith("https://")):
-        response = requests.get(f"http://{i}", verify=False)
+    try:
+        if not (i.startswith("http://") or i.startswith("https://")):
+            response = requests.get(f"http://{i}", verify=False)
+        else:
+            response = requests.get(i, verify=False)
         if "X-Frame-Options" in response.headers:
             print("X-Frame-Options header is set")
         else:
             print("X-Frame-Options header is not set and Website might be Vulnerable")
-    else:
-        response = requests.get(i, verify=False)
         if "X-Frame-Options" in response.headers:
             print("X-Frame-Options header is set")
         else:
             print("X-Frame-Options header is not set and Website might be vulnerable")
+    except requests.exceptions.RequestException as e:
+        print(f"Unable to reach the website {i}: {e}")
+        
 print("====================================================================================================================")
 print("In case of Any issues please create an issue over Github or contact me on Twitter @0zk3y")
 print("====================================================================================================================")
