@@ -3,14 +3,19 @@ import requests
 import urllib3
 urllib3.disable_warnings()
 
-filename = input("Enter the name of the file you want to read: ")
-with open(filename, 'r') as f:
-    contents = f.read()
-    print(contents)
-contents = contents.split("\n")[0:-1]
-for i in contents:
-    print(i)
-    i.rstrip()
+try:
+    filename = input("Enter the name of the file you want to read: ")
+    with open(filename, 'r') as f:
+        contents = f.read()
+        print(contents)
+except FileNotFoundError as e:
+    print(f"File not found: {e}")
+    exit()
+try:
+    contents = contents.split("\n")[0:-1]
+    for i in contents:
+        print(i)
+        i.rstrip()
     try:
         if not (i.startswith("http://") or i.startswith("https://")):
             response = requests.get(f"http://{i}", verify=False)
@@ -26,7 +31,10 @@ for i in contents:
             print("X-Frame-Options header is not set and Website might be vulnerable")
     except requests.exceptions.RequestException as e:
         print(f"Unable to reach the website {i}: {e}")
-        
+except ValueError as e:
+    print(f"Error in file contents: {e}")
+    exit()        
+
 print("====================================================================================================================")
 print("In case of Any issues please create an issue over Github or contact me on Twitter @0zk3y")
 print("====================================================================================================================")
