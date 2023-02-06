@@ -16,6 +16,9 @@ try:
     for i in contents:
         print(i)
         i.rstrip()
+        if i == "":
+            print("Hostname cannot be empty")
+            continue
     try:
         if not (i.startswith("http://") or i.startswith("https://")):
             response = requests.get(f"http://{i}", verify=False)
