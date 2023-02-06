@@ -11,7 +11,7 @@ Make sure you have **Python3** and **Git** installed to run the program:
 Clone this Repository:
 
 ```sh
-git clone https://github.com/0zk3y/ClickJacker/
+git clone https://github.com/0zk3y/ClickJacker
 ```
 
 Install Pre-requisites: 
